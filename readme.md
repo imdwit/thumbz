@@ -5,6 +5,8 @@ I was curious to see how it compared to React. I average around 8.194 ms Paint
 Compared to Carlos's 6ms with react.
 I'm running Chrome Version 44.0.2403.155 (64-bit) on a 13in 2012 macbook pro with 16gb ram and ssd.
 
+You can try out the demo [here](http://dwit.us/thumbz/)
+
 
 ## todo
 * probably try more images, and images of different sizes
