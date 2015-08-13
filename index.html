@@ -9,6 +9,10 @@
 			margin: 0;
 			padding: 0;
 		}
+		.preview {
+			max-width: 500px;
+			margin: 20px auto;
+		}
 		.thumbz {
 			width: 100%;
 		}
@@ -16,12 +20,15 @@
 	</head>
 	<body>
 		<h1>thumbz</h1>
-		<div  style="display: inline;" >
+		<div class="preview">
+			<p>My car:</p>
 			<img class="thumbz" style="display: inline-block; max-width: 100%;" data-imgs="imgs/miata1.jpg, imgs/miata2.jpeg, imgs/miata3.jpg, imgs/miata4.jpeg">
+		</div>
+		<div class="preview">
+			<p>Toby:</p>
 			<img class="thumbz" src="imgs/toby1.jpeg" style="display: inline-block; max-width: 100%;" data-imgs="imgs/toby1.jpeg, imgs/toby2.jpeg, imgs/toby3.jpeg">
 		</div>
 
-		<p id="log"></p>
 		<script src="./app.js"></script>
 	</body>
 </html>

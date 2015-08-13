@@ -2,19 +2,18 @@ var thumbContainers = document.querySelectorAll('.thumbz');
 Array.prototype.forEach.call(thumbContainers, function(el) {
 	if(!el.src)
 		el.src = el.dataset.imgs.split(',')[0];
-	 	//kick things off by loading the first img in the data attr
-	el.addEventListener('mousemove', changeSource, false);
-	el.addEventListener('touchmove', changeSource, false);
-	el.addEventListener('touchstart', changeSource, false);
 });
+
+document.addEventListener('mousemove', changeSource, false);
+document.addEventListener('touchstart', changeSource, false);
+document.addEventListener('touchmove', changeSource, false);
 
 function changeSource(e) {
 	var el = e.target;
+	if(!el.dataset.imgs)
+		return;
 	var imgs = el.dataset.imgs.split(',');
-	imgs.forEach(function(src, i) {
-		var img = new Image();
-		img.src = src;
-	});
+
 	var active = 0;
 	var width = el.offsetWidth;
 	var section = width / imgs.length;
