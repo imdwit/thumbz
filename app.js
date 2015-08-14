@@ -3,16 +3,15 @@ Array.prototype.forEach.call(thumbContainers, function(el) {
 	var imgs = el.dataset.imgs.split(',');
 	var preload = el.dataset.preload;
 
-	if(!el.src)
+	if (!el.src)
 		el.src = imgs[0];
 
-
-		if(preload) {
-			imgs.forEach(function(img) {
-				var newImage = new Image();
-				newImage.src = img;
-			})
-		}
+	if (preload) {
+		imgs.forEach(function(img) {
+			var newImage = new Image();
+			newImage.src = img;
+		});
+	}
 
 });
 
@@ -22,7 +21,7 @@ document.addEventListener('touchmove', changeSource, false);
 
 function changeSource(e) {
 	var el = e.target;
-	if(!el.dataset.imgs)
+	if (!el.dataset.imgs)
 		return;
 	var imgs = el.dataset.imgs.split(',');
 
