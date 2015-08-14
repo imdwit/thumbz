@@ -27,4 +27,4 @@ src attribute is optional, if there isn't a `<img src="path/img" />` then the fi
 * improve mobile functionality
 * cross browser testing
 
-* doesn't want to work with more than 1 data attribute
+* doesn't want to work with more than 1 dataurl as a `data-thumbz-imgs` value;
