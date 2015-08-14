@@ -23,17 +23,20 @@ function changeSource(e) {
 	var el = e.target;
 	if (!el.dataset.imgs)
 		return;
-	var imgs = el.dataset.imgs.split(',');
 
-	var active = 0;
-	var width = el.offsetWidth;
-	var section = width / imgs.length;
-	var position = e.clientX - el.offsetLeft;
+	var imgs = el.dataset.imgs.split(','),
+		active = 0,
+		width = el.offsetWidth,
+		len = imgs.length,
+		section = width / len,
+		position = e.clientX - el.offsetLeft,
+		i;
+
 	if (e.type === 'touchmove' || e.type === 'touchstart') {
 		position = e.touches[0].clientX;
 	}
 
-	for (var i = 0; i < imgs.length; i++) {
+	for (i = 0; i < len; i++) {
 		if (position > section * i && active != i) {
 			active = i;
 		}
