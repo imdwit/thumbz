@@ -1,8 +1,9 @@
 var thumbContainers = document.querySelectorAll('.thumbz');
 Array.prototype.forEach.call(thumbContainers, function(el) {
-	var imgs = el.dataset.imgs.split(',');
-	var preload = el.dataset.preload;
 
+	var imgs = el.dataset.thumbzImgs.split(', ');
+	var preload = el.dataset.thumbzPreload;
+	console.log(imgs);
 	if (!el.src)
 		el.src = imgs[0];
 
@@ -21,10 +22,12 @@ document.addEventListener('touchmove', changeSource, false);
 
 function changeSource(e) {
 	var el = e.target;
-	if (!el.dataset.imgs)
+	var thumbz = el.dataset.thumbzImgs;
+	if (!thumbz)
 		return;
 
-	var imgs = el.dataset.imgs.split(','),
+
+	var imgs= thumbz.split(', '),
 		active = 0,
 		width = el.offsetWidth,
 		len = imgs.length,
