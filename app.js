@@ -1,7 +1,19 @@
 var thumbContainers = document.querySelectorAll('.thumbz');
 Array.prototype.forEach.call(thumbContainers, function(el) {
+	var imgs = el.dataset.imgs.split(',');
+	var preload = el.dataset.preload;
+
 	if(!el.src)
-		el.src = el.dataset.imgs.split(',')[0];
+		el.src = imgs[0];
+
+
+		if(preload) {
+			imgs.forEach(function(img) {
+				var newImage = new Image();
+				newImage.src = img;
+			})
+		}
+
 });
 
 document.addEventListener('mousemove', changeSource, false);
