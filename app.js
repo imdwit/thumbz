@@ -6,7 +6,7 @@ Array.prototype.forEach.call(thumbContainers, function(el) {
 	if (!el.src)
 		el.src = imgs[0];
 
-	if (preload) {
+	if (preload) { //populates browser cache, otherwise images are loaded on changeSource() if not already in cache
 		imgs.forEach(function(img) {
 			var newImage = new Image();
 			newImage.src = img;
